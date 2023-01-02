@@ -1,0 +1,20 @@
+$ {keras}
+
+$ git remote add origin https://github.com/sunghunaaa/learning.git
+
+$ git branch
+
+$ git pull origin main --allow-unrelated-histories
+
+$ git push -u origin main
+
+
+import numpy as np
+ 
+ 
+ 
+a = np.array([1, 2, 3, 6])
+b = np.linspace(0, 2, 4) # 0이상 2이하 사이를 4개의 숫자로 나눈 거 
+c = a - b
+print(c)
+
