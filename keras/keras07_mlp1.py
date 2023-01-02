@@ -1,6 +1,6 @@
 # mlp = multi layer perceptron 
 # 행무시, 열우선 
-# 열 = 특성, 컬럼, 피쳐, input_dim (행,열)
+# 열 = 특성, 컬럼, 피쳐, input_dim = 열 (행,열)
 
 import numpy as np
 from tensorflow.keras.models import Sequential
