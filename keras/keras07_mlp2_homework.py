@@ -35,3 +35,7 @@ print('result : ', result)
 result : 20.06441
 loss : 0.14490263
 """
+
+"""
+git error 확인 
+"""
