@@ -13,7 +13,9 @@ print(y.shape)    # (10,)
 
 x = x.T
 print(x.shape)    # (10,3)
+print(x)
 
+"""
 model = Sequential()
 model.add(Dense(5,input_dim=3))
 model.add(Dense(4))
@@ -32,6 +34,7 @@ result = model.predict([[10,1.4,0]]) # **[[10,1.4,0]]
 print('result : ', result)
 
 """
+"""
 result : 20.06441
 loss : 0.14490263
 """
@@ -39,3 +42,4 @@ loss : 0.14490263
 """
 git error 확인 
 """
+
