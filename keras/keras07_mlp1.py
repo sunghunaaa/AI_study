@@ -30,8 +30,8 @@ model.compile(loss='mae', optimizer='adam')
 model.fit(x,y,epochs=100, batch_size=1)
 
 #4. evaluate, result - evaluate 배치 사이즈 default(32) 값임 
-loss = model.evaluate(x,y)
-print('loss : ', loss)
+loss = model.evaluate(x,y) # -> 훈련시킨 범위 내에서 loss값임으로 결과가 좋아보이지만, 범위를 벗어나면 loss값 안 좋아짐
+print('loss : ', loss)     # -> 100% 중 70% 데이터로 훈련시키고 나머지 30%로 평가를 시킨다. 예) x값으로 1~7까지 훈련 나머지 평가로 사용한다는 뜻임.
 
 result = model.predict([[10,1.4]])
 print('result : ', result)
