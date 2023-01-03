@@ -11,7 +11,6 @@ print(y.shape)  # 3,0
 x = x.T
 print(x.shape)  # 3,2
 
-
 model = Sequential()
 model.add(Dense(5, input_dim=2))
 model.add(Dense(4))
