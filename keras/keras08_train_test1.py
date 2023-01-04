@@ -10,6 +10,12 @@ x_test = np.array([8,9,10])                  #(3,)
 y_train = np.array(range(7))
 y_test = np.array(range(7,10)) 
 
+
+print(y_train)
+print(y_test)
+
+
+"""
 #2. model
 model = Sequential()
 model.add(Dense(5,input_dim=1))
@@ -34,3 +40,5 @@ print('result : ', result)
 
 #loss :  0.03468036651611328
 #result :  [[10.041458]]
+
+"""
