@@ -18,14 +18,14 @@ model.add(Dense(1))
 
 #3.compile
 model.compile(loss='mae', optimizer='adam')
-model.fit(x_train,y_train,epochs=100, batch_size=1)
+model.fit(x_train, y_train, epochs=100, batch_size=1)
 
 # evaluate, predict
 loss = model.evaluate(x_test,y_test)
 print('loss : ', loss)
 result = model.predict(x)
 
-#plat = line scatter = spot
+#plot = line scatter = spot
 import matplotlib.pyplot as plt
 plt.scatter(x,y)
 plt.plot(x,result, color = 'red')
