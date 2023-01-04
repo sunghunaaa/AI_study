@@ -1,0 +1,9 @@
+loss 종류 mse, mae 
+ -mse = mean square error
+ -mae = mean absolute error
+ -accuracy = 정확도 (acc)
+ 
+  * RMSE - root mean square error
+    compile에 입력 안 됨, sklearn.metrics 에서 mean_squared_error import하여 def해서 사용한다.
+  * R2 - R^2
+    compile에 입력 안 됨, sklearn.metrics 에서 r2_score import하여 r2= r2_score(y_test,y_predict) 정의하여 사용한다.
