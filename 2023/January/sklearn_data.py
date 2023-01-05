@@ -1,4 +1,4 @@
-from sklearn.datasets import load_diabetes
+from sklearn.datasets import load_diabetes  # load_  / load_뒤에 원하는 주제 입력 
 
 datasets = load_diabetes()
 x = datasets.data
