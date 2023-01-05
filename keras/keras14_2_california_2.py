@@ -27,11 +27,11 @@ x_train, x_test, y_train, y_test = train_test_split(x,y,train_size=0.9,random_st
 
 model = Sequential()
 model.add(Dense(500,input_dim=8))
-model.add(Dense(100))
 model.add(Dense(500))
-model.add(Dense(100))
 model.add(Dense(500))
-model.add(Dense(100))
+model.add(Dense(500))
+model.add(Dense(500))
+model.add(Dense(500))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
