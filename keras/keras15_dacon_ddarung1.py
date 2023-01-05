@@ -43,18 +43,6 @@ print('loss : ', loss)
 y_predict = model.predict(x_test)  # test_csv 넣으면 안 됨 ,머신을 러닝 시키고 나중에 test를 넣어 submission으로 시험 제출하는 거임 
 print(y_predict)
 
-#결측치 수정
-
-
-
-
-
-
-
-
-
-
-
 def RMSE(y_test, y_predict):
     return np.sqrt(mean_squared_error(y_test,y_predict))
 rmse = RMSE(y_test, y_predict)
