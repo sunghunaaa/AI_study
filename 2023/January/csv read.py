@@ -13,6 +13,8 @@ train_csv = pd.read_csv(path+'train.csv', index_col=0)
 test_csv = pd.read_csv(path+'test.csv', index_col=0)
 submission = pd.read_csv(path+'submission.csv', index_col=0)
 
+# index_col=0 안 하면 id생김 무조건 해야 됨
+
 print(train_csv) 
 # 훈련에 필요한 column값을 알아낸다. input_dim이 된다
 
