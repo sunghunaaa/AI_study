@@ -23,6 +23,7 @@ x = train_csv.drop(['count'], axis = 1)
 y = train_csv['count']
 # 훈련에 사용될 x와 y는 주어진 훈련용 csv(train_csv)에서 얻는다.
 # x는 id열과 count열을 제외한 나머지 값이 된다. 따라서 남은 'count'는 위 source로 제거한다. 
+# axis = 1은 열을 뜻하고, axis = 0 은 행을 뜻한다.
 # y는 count열이 된다. 따라서 위 source로 얻는다.
 
 from sklearn.models_selection import train_test_split
