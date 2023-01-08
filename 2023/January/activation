@@ -1,0 +1,11 @@
+activation
+
+종류 : linear, sigmoid, relu 
+
+1. linear - y=wx+b 
+
+2. sigmoid - x의 값에 따라 0~1의 값을 출력하는 S자형 함수
+
+3. relu - 입력값이 음수이면 0으로 출력한다. 입력값이 양수이면 그대로 출력한다.(w>0)
+
+* activation 기능을 통해 오차를 조절해 함수를 예측하는데 도움을 준다.
