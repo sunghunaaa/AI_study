@@ -1,0 +1,12 @@
+memory bomb
+
+Dense 40000
+Dense 30000
+-> 이렇게 연속된 layer로 model 구성하면 연산 불가능 error 뜸.
+연속된 layer의 연산은 40000*30000 가지수임 1,200,000,000 임 
+
+
+Dense 40000
+Dense 2
+Dense 30000
+-> 연산 가능함.
