@@ -18,6 +18,13 @@ x_train, x_test, y_train, y_test = train_test_split(
 #행렬 변수에도 사용가능           
 
 # *추가
+# validation(1)
 model.fit(x_train,y_train,epochs=200,batch_size=32
           ,validation=0.3)
 # validation - train_size의 30% 데이터로 훈련 단계에 검증을 추가함.
+
+# validation(2)
+model.fit(x_train,y_train,epochs=200,batch_size=32
+          ,validation_data=(x_val,y_val))
+#validation data를 따로 나눴을 경우 이렇게 사용할 수도 있다.
+
