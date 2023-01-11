@@ -10,3 +10,10 @@ activation
 
 * activation 기능을 통해 오차를 조절해 함수를 예측하는데 도움을 준다.
 * default 값은 linear임
+
+
+다중분류 최종 output layer에 무조건 softmax를 사용한다.
+*softmax의 원리는 모든 확률의 합은 무조건 1(100%)가 된다.
+
+
+
