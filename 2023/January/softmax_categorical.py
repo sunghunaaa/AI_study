@@ -66,16 +66,16 @@ y_predict = np.argmax(y_predict,axis=1)
 print(y_predict)
 acc = accuracy_score(y_test,y_predict)
 print(acc)
-numpy된 y_predict와 categorical된 y_test는 서로의 모양이 다름
-y_predict [1 1 1 ... 1 1 1]
-y_test
-[[1. 0. 0. ... 0. 0. 0.]
- [0. 1. 0. ... 0. 0. 0.]
- [0. 1. 0. ... 0. 0. 0.]
- ...
- [1. 0. 0. ... 0. 0. 0.]
- [0. 0. 0. ... 0. 0. 1.]
- [0. 1. 0. ... 0. 0. 0.]]
+numpy된 y_predict와 categorical된 y_test는 서로의 모양이 다름. 따라서 y_test도 argmax형태로 바꿔줘야 함.
+  y_predict [1 1 1 ... 1 1 1]
+  y_test
+    [[1. 0. 0. ... 0. 0. 0.]
+    [0. 1. 0. ... 0. 0. 0.]
+    [0. 1. 0. ... 0. 0. 0.]
+     ...
+    [1. 0. 0. ... 0. 0. 0.]
+    [0. 0. 0. ... 0. 0. 1.]
+    [0. 1. 0. ... 0. 0. 0.]]
 """
 
 y_predict = np.argmax(y_predict,axis=1)
