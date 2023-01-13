@@ -1,3 +1,5 @@
+####y값의 형태를 예상하면 소스를 만들어야 오류가 안 생긴다.####
+
 import numpy as np
 from sklearn.datasets import fetch_covtype
 from sklearn.metrics import accuracy_score
