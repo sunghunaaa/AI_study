@@ -18,10 +18,10 @@ model.add(Dense(1,activation='relu'))
 model.compile(loss='mse', optimizer='adam')
 earlyStopping = EarlyStopping(monitor='val_loss', mode = 'min', patience=20, restore_best_weights= True, verbose=1)
 """
-val_loss를 모니터하는데 의문을 갖으면 안 됨. 당연한 것
-mode - 'min', 'max', 'auto'
+val_loss를 모니터하는데 의문을 갖으면 안 됨. 당연한 것/ history의 val_loss의 최소값을 이용함.(현재 mode = min이라서 최소값)
+mode - 'min', 'max', 'auto'(accracy 사용 시에는 정확도 높을 수록 좋음 따라서 max로 설정함.)
 patience - 횟수만큼 val_loss값이 역전되면 훈련을 멈춘다.
-restore_best_weights - 횟수만큼 진행했을 가장 val_loss 값이 작은 weight 값의 위치를 저장해둔다.
+restore_best_weights - 횟수만큼 진행했을 때 가장 val_loss 값이 작은 weight 값의 위치를 저장해둔다./ True로 설정해둬야 종료 시점의 weight값이 아닌 최적의 weight값을 사용 가능하다.
 verbose - fit에서 사용되던 때와 유사한 기능
 """
 hist = model.fit(x,y,epochs=__,batch_size=32,
