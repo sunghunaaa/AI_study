@@ -21,7 +21,6 @@ print(np.unique(y_train, return_counts= True))
 #        500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
 #        500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
 #        500, 500, 500, 500, 500, 500, 500, 500, 500], dtype=int64))
-
 #2. model
 model = Sequential()
 model.add(Conv2D(filters=32, kernel_size=(2,2), input_shape=(32,32,3),
@@ -31,7 +30,6 @@ model.add(Conv2D(filters=32, kernel_size=(2,2) )) #29,29,32 - > 26.912
 model.add(Flatten())
 model.add(Dense(320,activation='relu'))
 model.add(Dense(100,activation='softmax'))
-
 #3. compile
 mcp = ModelCheckpoint(
     monitor="val_loss",
@@ -44,7 +42,6 @@ es = EarlyStopping(monitor='val_loss',patience=10,restore_best_weights=True,verb
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics='acc')
 hist = model.fit(x_train,y_train,epochs=20, verbose=1,validation_split=0.2, batch_size= 32,
                  callbacks=[es,mcp])
-
 #4.predict
 result = model.evaluate(x_test,y_test)
 
