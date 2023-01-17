@@ -23,6 +23,9 @@ mode - 'min', 'max', 'auto'(accracy 사용 시에는 정확도 높을 수록 좋
 patience - 횟수만큼 val_loss값이 역전되면 훈련을 멈춘다.
 restore_best_weights - 횟수만큼 진행했을 때 가장 val_loss 값이 작은 weight 값의 위치를 저장해둔다./ True로 설정해둬야 종료 시점의 weight값이 아닌 최적의 weight값을 사용 가능하다.
 verbose - fit에서 사용되던 때와 유사한 기능
+*추가
+Baseline - 모니터링된 수량에 대한 기준 값입니다. 모델이 기준선보다 개선되지 않으면 학습이 중지됩니다
+start_from_epoch - 개선 모니터링을 시작하기 전에 대기할 에포크 수입니다. 이는 개선이 예상되지 않는 워밍업 기간을 허용하므로 훈련이 중단되지 않습니다.
 """
 hist = model.fit(x,y,epochs=__,batch_size=32,
                  validation_split=0.2,
