@@ -35,11 +35,13 @@ mcp = ModelCheckpoint(monitor='val_loss', mode = 'auto', verbose=1, save_best_on
 ##############################################################
 model.fit(x_train,y_train,epochs=2,batch_size=32,validation_split=0.3,verbose=1,callbacks=[es,mcp])
 model.save(path + 'keras30_1_save_model.h5') # 모델 저장 (가중치 포함 x)
+
 """
 !!저장되는 파일 명을 시간별로 찍는 방법.
 import datetime
 date = datetime.datetime.now()
 date = date.strftime("%m%d_%H%M")
+print(type(date)) <class 'str>
 
 filepath = './_save/MCP/'
 filename = '{epoch:04d}-{val_loss:.4f}.hdf5' #0037-0.0048.hdf 
@@ -48,6 +50,7 @@ mcp = ModelCheckpoint(monitor='val_loss', mode = 'auto', verbose=1, save_best_on
 
 # save_best_only : 가중치 가장 좋은 지점 저장
 """
+
 #4. evaluate,predict
 
 
