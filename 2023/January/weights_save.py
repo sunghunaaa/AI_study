@@ -20,12 +20,12 @@ dense1 = Dense(5, activation='relu')(input1)
 dense2 = Dense(5, activation='linear')(dense1)
 output1 = Dense(1,activation='linear')(dense2)
 model = Model(inputs=input1, outputs=output1)
-model.save_weights(path + 'keras29_5_save_weights1.h5')  #초기 weight 값 저장됨
+model.save_weights(path + 'keras29_5_save_weights1_1.h5')  #초기 weight 값 저장됨, 직접 실행시켜봄
 #3. compile,fit
 model.compile(loss='mse',optimizer='adam',metrics=['mae'])
 earlystopping = EarlyStopping(monitor='val_loss',patience=3,mode='min',restore_best_weights=True)
 model.fit(x_train,y_train,epochs=2,batch_size=32,validation_split=0.2,callbacks=[earlystopping],verbose=1)
-model.save_weights(path + 'keras29_5_save_weights1.h5')  #complile, fit 후에 save weight하면 좋은 weight값 저장됨
+model.save_weights(path + 'keras29_5_save_weights1_2.h5')  #complile, fit 후에 save weight하면 좋은 weight값 저장됨
 #4. evaluate,predict
 
 
