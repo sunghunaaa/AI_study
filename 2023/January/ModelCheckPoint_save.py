@@ -41,7 +41,7 @@ model.save(path + 'keras30_1_save_model.h5') # 모델 저장 (가중치 포함 x
 import datetime
 date = datetime.datetime.now()
 date = date.strftime("%m%d_%H%M")
-print(type(date)) <class 'str>
+print(type(date)) <class 'datetime.datetime'>
 
 filepath = './_save/MCP/'
 filename = '{epoch:04d}-{val_loss:.4f}.hdf5' #0037-0.0048.hdf 
