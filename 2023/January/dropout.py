@@ -27,6 +27,28 @@ drop2 = Dropout(0.5)(dense2)
 output1 = Dense(1,activation='linear')(drop2)
 model = Model(inputs=input1, outputs=output1)
 model.summary()
+"""
+0.5는 위 layer에서 0.5(절반)만큼 노드를 빼준다는 의미
+0.2는 위 layer에서 1/5만큼 노드를 빼준다는 의미
+
+<Dropout>
+과적합을 방지하기 위해, 편향되지 않은 출력값을 내기 위해 0~1 사이의 확률로 중간 중간의 노드를 제거해주는 것
+https://heytech.tistory.com/127
+<Dropout 하는 방법>
+
+-Sequential model
+from tensorflow.keras.layers import Dropout
+model.add(Dropout(0~1사이값:확률))
+
+-Hamsu model
+from tensorflow.keras.layers import Dropout
+drop1 = Dropout(0~1사이값:확률))(dense1)
+dense2 = Dense(40, activation='sigmoid')(drop1)
+
+Dropout은 훈련할 때만 적용된
+evaluate 평가할 때는 모든 데이터를 다 활용한다.
+predict 예측할 때는 훈련해서 만들어진 함수, 가중치에 집어넣어서 값이 나오기 때문에 Dropout이 적용안된다.
+"""
 #3. compile,fit
 model.compile(loss='mse',optimizer='adam',metrics=['mae'])
 model.fit(x_train,y_train,epochs=10,batch_size=32,validation_split=0.2,verbose=1)
