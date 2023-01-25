@@ -24,11 +24,12 @@ print(np.unique(y_train, return_counts= True))
 #2. model
 model = Sequential()
 model.add(Conv2D(filters=32, kernel_size=(2,2), input_shape=(32,32,3),
+                 padding='same',
                  activation='relu'))  #31,31,32
 model.add(Conv2D(filters=32, kernel_size=(2,2) )) #30,30,32
 model.add(Conv2D(filters=32, kernel_size=(2,2) )) #29,29,32 - > 26.912
 model.add(Flatten())
-model.add(Dense(320,activation='relu'))
+model.add(Dense(160,activation='relu'))
 model.add(Dense(100,activation='softmax'))
 #3. compile
 mcp = ModelCheckpoint(
@@ -38,10 +39,11 @@ mcp = ModelCheckpoint(
     filepath= './_data/cifar100/cifar_modelcheckpoint.hdf5',
     verbose =1
 )
-es = EarlyStopping(monitor='val_loss',patience=10,restore_best_weights=True,verbose=1)
+es = EarlyStopping(monitor='val_loss',patience=50,restore_best_weights=True,verbose=1)
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics='acc')
-hist = model.fit(x_train,y_train,epochs=20, verbose=1,validation_split=0.2, batch_size= 32,
+hist = model.fit(x_train,y_train,epochs=200, verbose=1,validation_split=0.2, batch_size= 32,
                  callbacks=[es,mcp])
 #4.predict
 result = model.evaluate(x_test,y_test)
+print(result)
 
