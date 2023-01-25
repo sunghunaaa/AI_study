@@ -22,6 +22,10 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, Dense, Flatten
 print('len : ' ,len(x_train))
 
+import matplotlib.pyplot as plt
+plt.imshow(x_train[1], 'gray')
+plt.show()
+
 
 #conv2d 4차원 dense는 2차원
 
