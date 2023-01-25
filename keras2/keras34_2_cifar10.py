@@ -1,4 +1,4 @@
-from tensorflow.keras.datasets import cifar10, cifar100
+from tensorflow.keras.datasets import cifar10
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D,Flatten
@@ -37,6 +37,4 @@ hist = model.fit(x_train,y_train,epochs=20, verbose=1,validation_split=0.2, batc
 
 #4.predict
 result = model.evaluate(x_test,y_test)
-
-print(mcp)
 
