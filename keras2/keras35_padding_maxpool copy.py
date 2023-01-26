@@ -28,7 +28,7 @@ print('len : ' ,len(x_train))
 #2. model
 model = Sequential()
 model.add(Conv2D(filters=128, kernel_size= (3,3),
-                 padding='same', 
+                 padding='same',  #default = valid
                  input_shape=(28,28,1),
                  activation='relu'))   #(28,28,128) # 데이터 너무 많아 그래서 maxpooling하는 거
 model.add(MaxPool2D()) #(14,14,128) 'Param # = 0'
