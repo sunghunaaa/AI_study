@@ -1,4 +1,4 @@
-
+#error dataframe scaler하면서 바꿔주면 됨
 import pandas as pd
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, Flatten
@@ -15,8 +15,7 @@ path = './_data/bike/'
 train_csv = pd.read_csv(path + 'train.csv', index_col=0)
 test_csv = pd.read_csv(path + 'test.csv', index_col=0)
 submission = pd.read_csv(path + 'sampleSubmission.csv', index_col=0)
-
-df = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})                     
+                
 
 x = train_csv.drop(['casual', 'registered', 'count'], axis=1)   
 y = train_csv['count']   # output
