@@ -1,4 +1,4 @@
-#error
+#error y_predict argmax해주면 됨
 
 from sklearn.datasets import load_iris
 import numpy as np
