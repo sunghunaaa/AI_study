@@ -1,3 +1,4 @@
+#error dataframe scaler하면서 바꿔주면 됨
 import numpy as np
 import pandas as pd
 from tensorflow.keras.models import Sequential
