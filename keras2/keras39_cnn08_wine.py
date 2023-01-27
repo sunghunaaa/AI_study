@@ -37,7 +37,7 @@ print(x_train.shape, x_test.shape) #(404,13,1,1) (102,13,1,1)
 model = Sequential()
 model.add(Conv2D(64, kernel_size=(2,1), input_shape=(13,1,1), activation='relu'))
 model.add(Flatten()) 
-model.add(Dense(1, activation='softmax'))
+model.add(Dense(3, activation='softmax'))
 model.summary()
 
 ##3. 컴파일, 훈련
@@ -53,11 +53,18 @@ print('mse:', mse, ' / mae:', mae)
 
 y_predict = model.predict(x_test)
 
-
-from sklearn.metrics import mean_squared_error, r2_score
+y_predict=np.argmax(y_predict,axis=1)
+y_test=np.argmax(y_test,axis=1)
+from sklearn.metrics import mean_squared_error, accuracy_score
 def RMSE(y_test, y_predict):
     return np.sqrt(mean_squared_error(y_test, y_predict))
 print("RMSE:", RMSE(y_test, y_predict))
 
-r2 = r2_score(y_test, y_predict)
+r2 = accuracy_score(y_test, y_predict)
 print("R2:", r2)
+
+"""
+mse: 0.10902123153209686  / mae: 0.042224153876304626
+RMSE: 0.16378897
+R2: 0.8776659749432062
+"""
