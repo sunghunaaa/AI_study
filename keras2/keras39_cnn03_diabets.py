@@ -7,6 +7,7 @@ import numpy as np
 
 ##1. 데이터
 datasets = load_diabetes()
+print(datasets)
 x = datasets.data
 y = datasets.target
 print(x.shape) #(442, 10)
@@ -19,7 +20,7 @@ x_train, x_test, y_train, y_test = train_test_split(
     random_state=9)
 
 print(x_train.shape, x_test.shape) #(309, 10) (133, 10)
-
+print(x_train)
 
 x_train = x_train.reshape(309,5,2,1)
 x_test= x_test.reshape(133,5,2,1)
@@ -58,3 +59,7 @@ print("R2:", r2)
 # mse: 4523.31494140625  / mae: 57.36675262451172
 # RMSE: 67.25559589510631
 # R2: 0.18148898497935106
+
+# mse: 4524.06640625  / mae: 57.42216110229492
+# RMSE: 67.26117763578644
+# R2: 0.18135311804502408
