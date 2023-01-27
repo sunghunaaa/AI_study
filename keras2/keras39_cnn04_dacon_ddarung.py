@@ -5,6 +5,7 @@ from tensorflow.keras.layers import Dense,Conv2D,Flatten
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+from sklearn.preprocessing import MinMaxScaler
 
 
 
@@ -18,10 +19,17 @@ train_csv = train_csv.dropna()
 x = train_csv.drop(['count'], axis=1)   #칼럼의 축 axis
 y = train_csv['count']
 
+
 x_train, x_test, y_train, y_test = train_test_split(
     x, y, 
     train_size=0.9,
     random_state=209)
+
+
+scaler_minmax=MinMaxScaler()
+x_train=scaler_minmax.fit_transform(x_train)
+x_test=scaler_minmax.transform(x_test)
+test_csv=scaler_minmax.transform(test_csv)
 
 print(y_train.shape, y_test.shape) 
 #(1195,) (133,)
