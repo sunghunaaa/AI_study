@@ -18,7 +18,8 @@ print(y.shape)  # (150,)
 from tensorflow.keras.utils import to_categorical
 y = to_categorical(y)
 
-
+print(y.shape)
+#(150, 3)
 x_train, x_test, y_train, y_test = train_test_split(
     x, y, shuffle=True, random_state=123,
     test_size=0.2,
@@ -34,9 +35,9 @@ print(x_train.shape, x_test.shape)
 #2. model
 
 model = Sequential()
-model.add(Conv2D(64, kernel_size=(2,2), input_shape=(2,2,1), activation='relu'))
+model.add(Conv2D(64, kernel_size=(2,1), input_shape=(2,2,1), activation='relu'))
 model.add(Flatten())
-model.add(Dense(1, activation='softmax'))
+model.add(Dense(3, activation='softmax'))
 model.summary()
 
 ##3. 컴파일, 훈련
@@ -51,4 +52,9 @@ loss, accurac= model.evaluate(x_test, y_test)
 
 y_predict = model.predict(x_test)
 
+y_predict=np.argmax(y_predict,axis=1)
+y_test=np.argmax(y_test,axis=1)
+
 from sklearn.metrics import accuracy_score
+acc= accuracy_score(y_test,y_predict)
+print(acc)
