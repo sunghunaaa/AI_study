@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.datasets import fetch_covtype
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dense, Conv2D, Flatten
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import EarlyStopping
 
