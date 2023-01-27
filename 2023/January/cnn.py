@@ -22,6 +22,13 @@ model = Sequential()
 model.add(Conv2D(filters=10, kernel_size=(2,2), input_shape=(5,5,1)))   # (n,4,4,10)  n= 60000   
 ##(batch_shape, rows,columns,channels)  // channels 은 컬러 혹은 filters가 됨/batch_shape
 model.add(Conv2D(filters=5, kernel_size=(2,2)))  #(n,3,3,5)
+#########################################################
+
+
+#위의 layer는 model.add(Conv2D(5,(2,2)))와 동일
+#위의 layer는 model.add(Conv2D(5,2)))와 동일 2를 (2,2)로 인식
+
+#########################################################
 model.add(Flatten())   #(n,45)
 model.add(Dense(units=10))   #(n,10)  
 #input은 batch_size, input_dim   //  parameter = units
