@@ -93,7 +93,7 @@ y1_train = y1_train.astype(float)
 y1_test = y1_test.astype(float)
 y2_train = y2_train.astype(float)
 y2_test = y2_test.astype(float)
-# ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type int). 위 4줄의 소스가 모든 걸 다 해 결 ㅜ정룸나훤우러텨ㅑㅏ로ㅜㅇㅁ너ㅏㅗㄹ휴ㅜㅁㄴ어ㅗㅠㅊㅍ  
+# ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type int). 위 4줄의 소스가 모든 걸 다 해결
 """
 y1_train = y1_train.astype(float)
 y1_test = y1_test.astype(float)
