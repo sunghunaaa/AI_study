@@ -11,7 +11,7 @@ filename = '{epoch:05d}-{val_loss:.4f}.hdf5'
 mcp = ModelCheckpoint(monitor='val_loss', mode = 'auto', verbose=1, save_best_only=True, filepath= filepath+'k30_'+date+'_'+filename)
 
 
-sf1 = np.load('./_data/stock/sam.npy',allow_pickle=True) # ValueError: Object arrays cannot be loaded when allow_pickle=False //allow_pickle=True 추가해주면 됨~
+sf1 = np.load('./_data/stock/sam.npy',allow_pickle=True) # ValueError: Object arrays cannot be loaded when allow_pickle=False //allow_pickle=True 추가해주면 됨
 af1 = np.load('./_data/stock/amor.npy',allow_pickle=True)
 # print(sf1, sf1.shape) #(1977, 6)
 # print(af1, af1.shape) #(1977, 6)
