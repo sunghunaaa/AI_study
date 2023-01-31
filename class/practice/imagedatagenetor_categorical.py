@@ -24,7 +24,7 @@ xy_train = train_datagen.flow_from_directory(
     './_data/brain/train/',    
     target_size=(200,200),
     batch_size= 10,
-    class_mode='categorical',
+    class_mode='categorical',  #원핫되어서 나와준다 // 원한다면 sparse로도 가능함.
     color_mode='grayscale',
     shuffle=True,
     #Found 160 images belonging to 2 classes.
